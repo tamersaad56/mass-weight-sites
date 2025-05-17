@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>أمثلة حسابية</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function calcWeight() {
+      const mass = parseFloat(document.getElementById("mass").value);
+      const gravity = parseFloat(document.getElementById("gravity").value);
+      if (isNaN(mass) || isNaN(gravity)) {
+        document.getElementById("result").innerText = "أدخل قيم صحيحة.";
+        return;
+      }
+      const weight = mass * gravity;
+      document.getElementById("result").innerText = `الوزن = ${weight.toFixed(2)} نيوتن`;
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="mass.html">ما هي الكتلة؟</a></li>
+      <li><a href="weight.html">ما هو الوزن؟</a></li>
+      <li><a href="calculation.html">أمثلة حسابية</a></li>
+      <li><a href="conclusion.html">الخلاصة</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h1>احسب الوزن</h1>
+    <p>أدخل الكتلة وتسارع الجاذبية لتحصل على الوزن:</p>
+    <input type="number" id="mass" placeholder="الكتلة (كغ)">
+    <input type="number" id="gravity" placeholder="الجاذبية (م/ث²)">
+    <button onclick="calcWeight()">احسب</button>
+    <p id="result"></p>
+  </section>
+</body>
+</html>
